@@ -25,6 +25,16 @@ const draw = {
         ctx.fillStyle = "#999966";
         ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     },
+    pieces(x, y){
+        const imageKing = new Image();
+        imageKing.src = './assets/king-piece.jpg';
+        
+        for (var i = 0; i < x; i++) {
+            for (var j = 0; j < y; j++) {
+              ctx.drawImage(imageKing, j * 80, i * 80, 70, 70);
+            }
+          }
+    },
 }
 
 function setup(){
@@ -37,8 +47,9 @@ function setup(){
 }
 
 function render(){
-    draw.background()
+    draw.background();
     draw.board(board.x, board.y);
+    draw.pieces(board.x, board.y);
 }
 
 function loop(){
