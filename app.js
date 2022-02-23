@@ -28,14 +28,24 @@ const draw = {
     pieces(x, y){
         const image = new Image();
         const type = {
-            king: "./assets/king-piece.jpg",
+            kingBlack: "./assets/chess_piece_2_black_king.png",
+            knightBlack: "./assets/chess_piece_2_black_knight.png",
+            pawnBlack: "./assets/chess_piece_2_black_pawn.png",
+            queenBlack: "./assets/chess_piece_2_black_queen.png",
+            rookBlack: "./assets/chess_piece_2_black_rook.png",
+
+            kingWhite: "./assets/chess_piece_2_white_king.png",
+            knightWhite: "./assets/chess_piece_2_white_knight.png",
+            pawnWhite: "./assets/chess_piece_2_white_pawn.png",
+            queenWhite: "./assets/chess_piece_2_white_queen.png",
+            rookWhite: "./assets/chess_piece_2_white_rook.png",
         }
 
         for (var i = 0; i < x; i++) {
             for (var j = 0; j < y; j++) {
                 if ( type[board.chartBoard[i][j]] ) {
                     image.src = type[board.chartBoard[i][j]];
-                    ctx.drawImage(image, j * 80, i * 80, 70, 70);
+                    ctx.drawImage(image, j * 81, i * 85, 75, 75);
                 }
             }
           }     
