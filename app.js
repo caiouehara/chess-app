@@ -26,14 +26,19 @@ const draw = {
         ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     },
     pieces(x, y){
-        const imageKing = new Image();
-        imageKing.src = './assets/king-piece.jpg';
-        
+        const image = new Image();
+        const type = {
+            king: "./assets/king-piece.jpg",
+        }
+
         for (var i = 0; i < x; i++) {
             for (var j = 0; j < y; j++) {
-              ctx.drawImage(imageKing, j * 80, i * 80, 70, 70);
+                if ( type[board.chartBoard[i][j]] ) {
+                    image.src = type[board.chartBoard[i][j]];
+                    ctx.drawImage(image, j * 80, i * 80, 70, 70);
+                }
             }
-          }
+          }     
     },
 }
 
