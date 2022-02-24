@@ -1,4 +1,4 @@
-const canvasElement = document.getElementById("canvas");
+const canvasElement = $("#canvas");
 const ctx = canvasElement.getContext("2d");
 
 const CANVAS_WIDTH = 800;
